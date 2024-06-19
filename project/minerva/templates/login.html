@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Minerva ChatBot</title>
+    <link rel="stylesheet" href="{% static 'minerva/css/minerva.css' %}">
+    <link rel="shortcut icon" href="{% static "minerva/css/logominerva.png" %}" type="image/x-icon">
+</head>
+<body>
+    <script src="{% static 'minerva/js/backs.js' %}"></script>
+
+    <header>
+        <div class="logo">
+        <img src="{% static 'minerva/css/logominerva.png' %}" alt="Logo do Minerva ChatBot" width="40px">
+        <p class="titulo">Minerva ChatBot</p>
+        </div>
+        </header>
+
+        <div class="corpo">
+            <h1>Acesso ao Sistema</h1>
+
+            <div class="erro" id="mensagemerro">Login ou Senha incorretos ou em branco</div>
+            
+            <div class="inputs">
+            <label>Login</label>
+            <input type="text" id="login" required>
+        </div>
+        <div class="inputs">
+            <label>Senha</label>
+            <input type="password" id="senha" required>
+        </div>
+
+        <input type="submit" value="Entrar" class="btnenvio" onclick="logar(); return false">
+            
+        </div>
+
+        <footer>
+            <p>Todos os direitos reservados aos desenvolvedores - 2023</p>
+        </footer>
+</body>
+</html>

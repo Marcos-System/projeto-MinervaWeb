@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Avisos - Minerva ChatBot</title>
+    <link rel="stylesheet" href={% static "minerva/css/minerva.css" %}> <link
+    rel="shortcut icon" href="{% static "minerva/css/logominerva.png" %}"
+    type="image/x-icon">
+  </head>
+  <body>
+    <script src="{% static 'minerva/js/backs.js' %}"></script>
+    <header>
+      <div class="logo">
+        <img src={% static "minerva/css/logominerva.png" %} alt="Logo do Minerva
+        ChatBot" width="40px">
+        <p class="titulo">Minerva ChatBot</p>
+      </div>
+      <ul class="menu">
+        <li><a href="https://mail.google.com">Acessar E-mail</a></li>
+      </ul>
+    </header>
+    <div class="corpo">
+      <h1>Editar Aviso</h1>
+
+      <form method="post" action="update/{{aviso.id}}">
+        {% csrf_token %}
+
+        <div class="inputs">
+          <label for="{{ form.dia.id_for_label }}">Data de envio:</label>
+          {{ form.dia }}
+        </div>
+
+        <div class="inputs">
+          <label for="{{ form.hora.id_for_label }}"
+            >Horário de envio (HH:MM):</label
+          >
+          {{ form.hora }}
+        </div>
+
+        <div class="inputs">
+          <label for="{{ form.mensagem.id_for_label }}">Aviso:</label>
+          {{ form.mensagem }}
+        </div>
+
+        <input
+        type="submit"
+        value="Editar"
+        class="btnenvio"
+      />
+      </form>      
+
+    <footer>
+      <p>Todos os direitos reservados aos desenvolvedores - 2023</p>
+    </footer>
+  </body>
+</html>
